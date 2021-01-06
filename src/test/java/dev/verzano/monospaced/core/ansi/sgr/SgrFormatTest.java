@@ -76,10 +76,8 @@ class SgrFormatTest {
 
     @Test
     void normalAnsiFormatFormatAttributes() {
-        SgrFormat normal = SgrFormat.normalSgrFormat();
-        assertEquals(normal.getBackground(), Background.NONE, "AnsiFormat.NORMAL should have Background.NONE as it's background");
-        assertEquals(normal.getForeground(), Foreground.NONE, "AnsiFormat.NORMAL should have Foreground.NONE as it's foreground");
-        assertEquals(normal.getAttributes(), Set.of(Attribute.NORMAL), "AnsiFormat.NORMAL should have [Attribute.NORMAL] as it's attribute set");
+        String actual = SgrFormat.normalSgrFormat();
+        assertEquals("\u001B[0m", actual);
     }
 
     @Test

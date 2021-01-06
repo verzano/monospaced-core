@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class SgrFormat {
+    private static final String normalSgrFormat = new SgrFormat(Background.NONE, Foreground.NONE, Attribute.NORMAL).getFormatString();
 
     private Background background;
     private Foreground foreground;
@@ -28,10 +29,6 @@ public class SgrFormat {
         this.background = background == null ? Background.NONE : background;
         this.foreground = foreground == null ? Foreground.NONE : foreground;
         this.attributes = attributes == null ? new HashSet<>() : attributes;
-    }
-
-    public static SgrFormat normalSgrFormat() {
-        return new SgrFormat(Background.NONE, Foreground.NONE, Attribute.NORMAL);
     }
 
     public Background getBackground() {
@@ -116,6 +113,10 @@ public class SgrFormat {
 
             dirty = false;
         }
+    }
+
+    public static String normalSgrFormat() {
+        return normalSgrFormat;
     }
 
     static boolean attributeSetsEqual(Set<Attribute> set1, Set<Attribute> set2) {
