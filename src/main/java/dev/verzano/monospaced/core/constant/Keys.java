@@ -10,12 +10,12 @@ public class Keys {
     }
 
     // TODO make this immutable
-    private static Set<String> printableAscii;
+    private static Set<Character> printableAscii;
 
-    public static Set<String> printableAscii() {
+    public static Set<Character> printableAscii() {
         if (printableAscii == null) {
             printableAscii = IntStream.range(32, 256)
-                    .mapToObj(i -> String.valueOf((char) i))
+                    .mapToObj(i -> (char) i)
                     .collect(Collectors.toSet());
         }
 
@@ -23,9 +23,9 @@ public class Keys {
     }
 
     // Control Keys
-    public static final String ESC = "\u001B";
-    public static final String BACKSPACE = "\u0008";
-    public static final String DELETE = "\u007F";
+    public static final char ESC = '\u001B';
+    public static final char BACKSPACE = '\u0008';
+    public static final char DELETE = '\u007F';
 
     // Arrow Keys
     public static final String UP_ARROW = ESC + "[A";
@@ -34,61 +34,61 @@ public class Keys {
     public static final String LEFT_ARROW = ESC + "[D";
 
     // Whitespace Keys
-    public static final String SPACE = " ";
-    public static final String TAB = "\u0009";
-    public static final String ENTER = "\u000B";
+    public static final char SPACE = ' ';
+    public static final char TAB = '\u0009';
+    public static final char ENTER = '\u000B';
 
     // Letter Keys
-    public static final String A_LOWER = "a";
-    public static final String B_LOWER = "b";
-    public static final String C_LOWER = "c";
-    public static final String D_LOWER = "d";
-    public static final String E_LOWER = "e";
-    public static final String F_LOWER = "f";
-    public static final String G_LOWER = "g";
-    public static final String H_LOWER = "h";
-    public static final String I_LOWER = "i";
-    public static final String J_LOWER = "j";
-    public static final String K_LOWER = "k";
-    public static final String L_LOWER = "l";
-    public static final String M_LOWER = "m";
-    public static final String N_LOWER = "n";
-    public static final String O_LOWER = "o";
-    public static final String P_LOWER = "p";
-    public static final String Q_LOWER = "q";
-    public static final String R_LOWER = "r";
-    public static final String S_LOWER = "s";
-    public static final String T_LOWER = "t";
-    public static final String U_LOWER = "u";
-    public static final String V_LOWER = "v";
-    public static final String W_LOWER = "w";
-    public static final String X_LOWER = "x";
-    public static final String Y_LOWER = "y";
-    public static final String Z_LOWER = "z";
-    public static final String A_UPPER = "A";
-    public static final String B_UPPER = "B";
-    public static final String C_UPPER = "C";
-    public static final String D_UPPER = "D";
-    public static final String E_UPPER = "E";
-    public static final String F_UPPER = "F";
-    public static final String G_UPPER = "G";
-    public static final String H_UPPER = "H";
-    public static final String I_UPPER = "I";
-    public static final String J_UPPER = "J";
-    public static final String K_UPPER = "K";
-    public static final String L_UPPER = "L";
-    public static final String M_UPPER = "M";
-    public static final String N_UPPER = "N";
-    public static final String O_UPPER = "O";
-    public static final String P_UPPER = "P";
-    public static final String Q_UPPER = "Q";
-    public static final String R_UPPER = "R";
-    public static final String S_UPPER = "S";
-    public static final String T_UPPER = "T";
-    public static final String U_UPPER = "U";
-    public static final String V_UPPER = "V";
-    public static final String W_UPPER = "W";
-    public static final String X_UPPER = "X";
-    public static final String Y_UPPER = "Y";
-    public static final String Z_UPPER = "Z";
+    public static final char A_LOWER = 'a';
+    public static final char B_LOWER = 'b';
+    public static final char C_LOWER = 'c';
+    public static final char D_LOWER = 'd';
+    public static final char E_LOWER = 'e';
+    public static final char F_LOWER = 'f';
+    public static final char G_LOWER = 'g';
+    public static final char H_LOWER = 'h';
+    public static final char I_LOWER = 'i';
+    public static final char J_LOWER = 'j';
+    public static final char K_LOWER = 'k';
+    public static final char L_LOWER = 'l';
+    public static final char M_LOWER = 'm';
+    public static final char N_LOWER = 'n';
+    public static final char O_LOWER = 'o';
+    public static final char P_LOWER = 'p';
+    public static final char Q_LOWER = 'q';
+    public static final char R_LOWER = 'r';
+    public static final char S_LOWER = 's';
+    public static final char T_LOWER = 't';
+    public static final char U_LOWER = 'u';
+    public static final char V_LOWER = 'v';
+    public static final char W_LOWER = 'w';
+    public static final char X_LOWER = 'x';
+    public static final char Y_LOWER = 'y';
+    public static final char Z_LOWER = 'z';
+    public static final char A_UPPER = 'A';
+    public static final char B_UPPER = 'B';
+    public static final char C_UPPER = 'C';
+    public static final char D_UPPER = 'D';
+    public static final char E_UPPER = 'E';
+    public static final char F_UPPER = 'F';
+    public static final char G_UPPER = 'G';
+    public static final char H_UPPER = 'H';
+    public static final char I_UPPER = 'I';
+    public static final char J_UPPER = 'J';
+    public static final char K_UPPER = 'K';
+    public static final char L_UPPER = 'L';
+    public static final char M_UPPER = 'M';
+    public static final char N_UPPER = 'N';
+    public static final char O_UPPER = 'O';
+    public static final char P_UPPER = 'P';
+    public static final char Q_UPPER = 'Q';
+    public static final char R_UPPER = 'R';
+    public static final char S_UPPER = 'S';
+    public static final char T_UPPER = 'T';
+    public static final char U_UPPER = 'U';
+    public static final char V_UPPER = 'V';
+    public static final char W_UPPER = 'W';
+    public static final char X_UPPER = 'X';
+    public static final char Y_UPPER = 'Y';
+    public static final char Z_UPPER = 'Z';
 }
