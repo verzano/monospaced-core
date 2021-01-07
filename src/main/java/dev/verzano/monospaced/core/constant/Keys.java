@@ -1,6 +1,5 @@
 package dev.verzano.monospaced.core.constant;
 
-import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -14,7 +13,8 @@ public class Keys {
 
     public static Set<Character> printableAscii() {
         if (printableAscii == null) {
-            printableAscii = IntStream.range(32, 256)
+            // TODO make this extended ASCII
+            printableAscii = IntStream.range(32, 127)
                     .mapToObj(i -> (char) i)
                     .collect(Collectors.toSet());
         }
@@ -36,7 +36,7 @@ public class Keys {
     // Whitespace Keys
     public static final char SPACE = ' ';
     public static final char TAB = '\u0009';
-    public static final char ENTER = '\u000B';
+    public static final char ENTER = '\r';
 
     // Letter Keys
     public static final char A_LOWER = 'a';
