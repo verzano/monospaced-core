@@ -1,6 +1,6 @@
 package dev.verzano.monospaced.core.ansi.sgr;
 
-import dev.verzano.monospaced.core.ansi.ControlSequence;
+import static dev.verzano.monospaced.core.ansi.ControlSequences.SGR;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -108,7 +108,7 @@ public class SgrFormat {
                     parameters += (hasOne ? ";" : "") + background.getCode();
                 }
 
-                formatString = ControlSequence.SGR.formatted(parameters);
+                formatString = SGR.apply(parameters);
             }
 
             dirty = false;
