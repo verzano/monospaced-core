@@ -1,22 +1,23 @@
 package dev.verzano.monospaced.core.constant;
 
+import static java.util.stream.Collectors.toUnmodifiableSet;
+
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+// TODO something with extended ASCII or Unicode...
+// TODO it is tricky though as Unicode is massive and extended ASCII depends on who extended it
 public class Keys {
     private Keys() {
     }
 
-    // TODO make this immutable
     private static Set<Character> printableAscii;
 
     public static Set<Character> printableAscii() {
         if (printableAscii == null) {
-            // TODO make this extended ASCII
             printableAscii = IntStream.range(32, 127)
                     .mapToObj(i -> (char) i)
-                    .collect(Collectors.toSet());
+                    .collect(toUnmodifiableSet());
         }
 
         return printableAscii;
