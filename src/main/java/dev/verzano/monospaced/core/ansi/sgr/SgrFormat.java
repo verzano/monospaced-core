@@ -82,7 +82,7 @@ public class SgrFormat {
 
     public void flush() {
         if (dirty) {
-            Set<Attribute> cleanAttributes = attributes.stream()
+            var cleanAttributes = attributes.stream()
                     .filter(a -> a != Attribute.NONE)
                     .collect(Collectors.toSet());
 
@@ -120,12 +120,16 @@ public class SgrFormat {
     }
 
     static boolean attributeSetsEqual(Set<Attribute> set1, Set<Attribute> set2) {
-        return !(set1 == null || set2 == null) && set1.size() == set2.size() && set1.containsAll(set2);
+        return !(set1 == null || set2 == null)
+                && set1.size() == set2.size()
+                && set1.containsAll(set2);
     }
 
     static Set<Attribute> toAttributeSet(Attribute[] attributes) {
         return attributes == null
                 ? new HashSet<>()
-                : Arrays.stream(attributes).filter(Objects::nonNull).collect(Collectors.toSet());
+                : Arrays.stream(attributes)
+                        .filter(Objects::nonNull)
+                        .collect(Collectors.toSet());
     }
 }

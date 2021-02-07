@@ -31,7 +31,7 @@ public class Point {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Point point = (Point) o;
+        var point = (Point) o;
         return x == point.x && y == point.y;
     }
 

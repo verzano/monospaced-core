@@ -63,7 +63,7 @@ public class Spacing {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Spacing spacing = (Spacing) o;
+        var spacing = (Spacing) o;
         return left == spacing.left && top == spacing.top && right == spacing.right && bottom == spacing.bottom;
     }
 

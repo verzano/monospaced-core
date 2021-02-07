@@ -1,12 +1,13 @@
 package dev.verzano.monospaced.core.ansi.sgr;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SgrFormatTest {
     static Object[][] setNewBackground() {
@@ -67,7 +68,7 @@ class SgrFormatTest {
 
     @Test
     void flush() {
-        SgrFormat sgrf = new SgrFormat(Background._2, Foreground._3);
+        var sgrf = new SgrFormat(Background._2, Foreground._3);
 
         assertTrue(sgrf.isDirty());
         sgrf.flush();
@@ -76,20 +77,20 @@ class SgrFormatTest {
 
     @Test
     void normalAnsiFormatFormatAttributes() {
-        String actual = SgrFormat.normalSgrFormat();
+        var actual = SgrFormat.normalSgrFormat();
         assertEquals("\u001B[0m", actual);
     }
 
     @Test
     void setNullBackgroundInConstructor() {
-        SgrFormat sgrf = new SgrFormat(null, Foreground._0);
+        var sgrf = new SgrFormat(null, Foreground._0);
 
         assertEquals(Background.NONE, sgrf.getBackground());
     }
 
     @Test
     void setNullBackground() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0);
+        var sgrf = new SgrFormat(Background._0, Foreground._0);
         sgrf.setBackground(null);
 
         assertEquals(Background.NONE, sgrf.getBackground());
@@ -97,14 +98,14 @@ class SgrFormatTest {
 
     @Test
     void setNullForegroundInConstructor() {
-        SgrFormat sgrf = new SgrFormat(Background._0, null);
+        var sgrf = new SgrFormat(Background._0, null);
 
         assertEquals(Foreground.NONE, sgrf.getForeground());
     }
 
     @Test
     void setNullForeground() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0);
+        var sgrf = new SgrFormat(Background._0, Foreground._0);
         sgrf.setForeground(null);
 
         assertEquals(Foreground.NONE, sgrf.getForeground());
@@ -112,21 +113,21 @@ class SgrFormatTest {
 
     @Test
     void setNullSingleAttributeInConstructor() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0, (Attribute) null);
+        var sgrf = new SgrFormat(Background._0, Foreground._0, (Attribute) null);
 
         assertTrue(sgrf.getAttributes().isEmpty());
     }
 
     @Test
     void setNullAttributesSetInConstructor() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0, (Set<Attribute>) null);
+        var sgrf = new SgrFormat(Background._0, Foreground._0, (Set<Attribute>) null);
 
         assertTrue(sgrf.getAttributes().isEmpty());
     }
 
     @Test
     void setNullSingleAttribute() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0, Attribute.INVERSE_ON);
+        var sgrf = new SgrFormat(Background._0, Foreground._0, Attribute.INVERSE_ON);
         sgrf.setAttributes((Attribute) null);
 
         assertTrue(sgrf.getAttributes().isEmpty());
@@ -134,7 +135,7 @@ class SgrFormatTest {
 
     @Test
     void setNullAttributesSet() {
-        SgrFormat sgrf = new SgrFormat(Background._0, Foreground._0, Attribute.INVERSE_ON);
+        var sgrf = new SgrFormat(Background._0, Foreground._0, Attribute.INVERSE_ON);
         sgrf.setAttributes((Set<Attribute>) null);
 
         assertTrue(sgrf.getAttributes().isEmpty());
@@ -143,7 +144,7 @@ class SgrFormatTest {
     @ParameterizedTest
     @MethodSource("setNewBackground")
     void setNewBackground(Background oldBg, Background newBg, boolean shouldBeDirty) {
-        SgrFormat sgrf = new SgrFormat(oldBg, Foreground.NONE);
+        var sgrf = new SgrFormat(oldBg, Foreground.NONE);
         sgrf.flush();
 
         sgrf.setBackground(newBg);
@@ -155,7 +156,7 @@ class SgrFormatTest {
     @ParameterizedTest
     @MethodSource("setNewForeground")
     void setNewForeground(Foreground oldFg, Foreground newFg, boolean shouldBeDirty) {
-        SgrFormat sgrf = new SgrFormat(Background.NONE, oldFg);
+        var sgrf = new SgrFormat(Background.NONE, oldFg);
         sgrf.flush();
 
         sgrf.setForeground(newFg);
@@ -167,7 +168,7 @@ class SgrFormatTest {
     @ParameterizedTest
     @MethodSource("setNewAttributes")
     void setNewAttributesAsArray(Attribute[] oldAttrs, Attribute[] newAttrs, boolean shouldBeDirty) {
-        SgrFormat sgrf = new SgrFormat(Background.NONE, Foreground.NONE, oldAttrs);
+        var sgrf = new SgrFormat(Background.NONE, Foreground.NONE, oldAttrs);
         sgrf.flush();
 
         sgrf.setAttributes(newAttrs);
@@ -179,7 +180,7 @@ class SgrFormatTest {
     @ParameterizedTest
     @MethodSource("setNewAttributes")
     void setNewAttributesAsSet(Attribute[] oldAttrs, Attribute[] newAttrs, boolean shouldBeDirty) {
-        SgrFormat sgrf = new SgrFormat(Background.NONE, Foreground.NONE, Set.of(oldAttrs));
+        var sgrf = new SgrFormat(Background.NONE, Foreground.NONE, Set.of(oldAttrs));
         sgrf.flush();
 
         sgrf.setAttributes(Set.of(newAttrs));
@@ -191,7 +192,7 @@ class SgrFormatTest {
     @ParameterizedTest
     @MethodSource("getFormatString")
     void getFormatString(Background bg, Foreground fg, Attribute[] attrs, String expected) {
-        SgrFormat sgrf = new SgrFormat(bg, fg, attrs);
+        var sgrf = new SgrFormat(bg, fg, attrs);
 
         assertTrue(sgrf.isDirty());
         String actual = sgrf.getFormatString();

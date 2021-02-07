@@ -5,12 +5,12 @@ package dev.verzano.monospaced.core.ansi;
  * moving the cursor position, buffer position, and clearing lines can be achieved through this.  Some control sequences
  * accept one or more values as inputs to modify their behavior.  More information on control sequences (specifically
  * the ones used in the Monospaced framework) can be found
- * <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences>here</a>.
+ * <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences">here</a>.
  *
  * Instances of the concrete implementations of this class can be obtained from the {@link ControlSequences} class.
  *
  * @see ControlSequences
- * @see <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences/">
+ * @see <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences">CSI (Control Sequence Introducer) Sequences</a>
  */
 // TODO make these sealed classes when possible
 public abstract class ControlSequence {

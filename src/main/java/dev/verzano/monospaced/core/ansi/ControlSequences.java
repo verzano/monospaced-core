@@ -5,7 +5,7 @@ import dev.verzano.monospaced.core.ansi.ControlSequence.NullaryControlSequence;
 import dev.verzano.monospaced.core.ansi.ControlSequence.UnaryControlSequence;
 import dev.verzano.monospaced.core.constant.Keys;
 
-public class ControlSequences {
+public final class ControlSequences {
     private ControlSequences() {
     }
 
@@ -15,7 +15,7 @@ public class ControlSequences {
      * Code: <code>ESC [</code>
      * Description: The opening set of characters to ANSI command sequences.
      */
-    static final String CSI = Keys.ESC + "[";
+    public static final String CSI = Keys.ESC + "[";
 
     /**
      * Name: Cursor Up

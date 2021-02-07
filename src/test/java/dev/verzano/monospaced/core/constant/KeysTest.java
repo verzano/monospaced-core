@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashSet;
-import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -104,8 +103,8 @@ class KeysTest {
 
     @Test
     void printableAsciiIsUnmodifiable() {
-        Set<Character> printableAscii = Keys.printableAscii();
-        Set<Character> chars = new HashSet<>();
+        var printableAscii = Keys.printableAscii();
+        var chars = new HashSet<Character>();
         chars.add('/');
         chars.add('\\');
 
@@ -135,10 +134,10 @@ class KeysTest {
 
     @Test
     void printableAsciiValues() {
-        Set<Character> printableAscii = Keys.printableAscii();
+        var printableAscii = Keys.printableAscii();
 
         assertEquals(95, printableAscii.size(), "wrong number of items in the printableAscii set");
-        for (Character pa : printableAscii) {
+        for (var pa : printableAscii) {
             assertTrue(32 <= (int) pa && 127 > (int) pa, "value " + pa + " is outside the range of [32, 127)");
         }
     }

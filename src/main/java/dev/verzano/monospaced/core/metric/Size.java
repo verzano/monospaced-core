@@ -38,7 +38,7 @@ public class Size {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Size size = (Size) o;
+        var size = (Size) o;
         return width == size.width && height == size.height;
     }
 
