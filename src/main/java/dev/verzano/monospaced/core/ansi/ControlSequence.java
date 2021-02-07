@@ -10,6 +10,7 @@ package dev.verzano.monospaced.core.ansi;
  * Instances of the concrete implementations of this class can be obtained from the {@link ControlSequences} class.
  *
  * @see ControlSequences
+ * @see <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences/">
  */
 // TODO make these sealed classes when possible
 public abstract class ControlSequence {
