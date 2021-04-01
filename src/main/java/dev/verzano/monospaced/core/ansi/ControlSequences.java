@@ -10,98 +10,98 @@ public final class ControlSequences {
     }
 
     /**
-     * Name: Control Sequence Introducer
-     * Short Name: CSI
-     * Code: <code>ESC [</code>
-     * Description: The opening set of characters to ANSI command sequences.
+     * <strong>Name:</strong> Control Sequence Introducer<br>
+     * <strong>Short Name:</strong> CSI<br>
+     * <strong>Code:</strong> <code>ESC [</code><br>
+     * <strong>Description:</strong> The opening set of characters to ANSI command sequences.
      */
     public static final String CSI = Keys.ESC + "[";
 
     /**
-     * Name: Cursor Up
-     * Short Name: CUU
-     * Code: <code>CSI <i>n</i> A</code>
-     * Description: Moves the cursor <i>n</i> (default 1) cells up.
+     * <strong>Name:</strong> Cursor Up<br>
+     * <strong>Short Name:</strong> CUU<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> A</code><br>
+     * <strong>Description:</strong> Moves the cursor <i>n</i> (default 1) cells up.
      */
     public static final UnaryControlSequence<Integer> CUU = new UnaryControlSequence<>(CSI + "%dA");
 
     /**
-     * Name: Cursor Down
-     * Short Name: CUD
-     * Code: <code>CSI <i>n</i> B</code>
-     * Description: Moves the cursor <i>n</i> (default 1) cells down.
+     * <strong>Name:</strong> Cursor Down<br>
+     * <strong>Short Name:</strong> CUD<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> B</code><br>
+     * <strong>Description:</strong> Moves the cursor <i>n</i> (default 1) cells down.
      */
     public static final UnaryControlSequence<Integer> CUD = new UnaryControlSequence<>(CSI + "%dB");
 
     /**
-     * Name: Cursor Forward
-     * Short Name: CUF
-     * Code: <code>CSI <i>n</i> C</code>
-     * Description: Moves the cursor <i>n</i> (default 1) cells forward (right).
+     * <strong>Name:</strong> Cursor Forward<br>
+     * <strong>Short Name:</strong> CUF<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> C</code><br>
+     * <strong>Description:</strong> Moves the cursor <i>n</i> (default 1) cells forward (right).
      */
     public static final UnaryControlSequence<Integer> CUF = new UnaryControlSequence<>(CSI + "%dC");
 
     /**
-     * Name: Cursor Down
-     * Short Name: CUD
-     * Code: <code>CSI <i>n</i> D</code>
-     * Description: Moves the cursor <i>n</i> (default 1) cells back (left).
+     * <strong>Name:</strong> Cursor Down<br>
+     * <strong>Short Name:</strong> CUD<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> D</code><br>
+     * <strong>Description:</strong> Moves the cursor <i>n</i> (default 1) cells back (left).
      */
     public static final UnaryControlSequence<Integer> CUB = new UnaryControlSequence<>(CSI + "%dD");
 
     /**
-     * Name: Cursor Next Line
-     * Short Name: CNL
-     * Code: <code>CSI <i>n</i> E</code>
-     * Description: Moves cursor to beginning of the line <i>n</i> (default 1) lines down.
+     * <strong>Name:</strong> Cursor Next Line<br>
+     * <strong>Short Name:</strong> CNL<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> E</code><br>
+     * <strong>Description:</strong> Moves cursor to beginning of the line <i>n</i> (default 1) lines down.
      */
     public static final UnaryControlSequence<Integer> CNL = new UnaryControlSequence<>(CSI + "%dE");
 
     /**
-     * Name: Cursor Previous Line
-     * Short Name: CPL
-     * Code: <code>CSI <i>n</i> F</code>
-     * Description: Moves cursor to beginning of the line <i>n</i> (default 1) lines up.
+     * <strong>Name:</strong> Cursor Previous Line<br>
+     * <strong>Short Name:</strong> CPL<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> F</code><br>
+     * <strong>Description:</strong> Moves cursor to beginning of the line <i>n</i> (default 1) lines up.
      */
     public static final UnaryControlSequence<Integer> CPL = new UnaryControlSequence<>(CSI + "%dF");
 
     /**
-     * Name: Cursor Horizontal Absolute
-     * Short Name: CHA
-     * Code: <code>CSI <i>n</i> G</code>
-     * Description: Moves the cursor to column n (default 1).
+     * <strong>Name:</strong> Cursor Horizontal Absolute<br>
+     * <strong>Short Name:</strong> CHA<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> G</code><br>
+     * <strong>Description:</strong> Moves the cursor to column n (default 1).
      */
     public static final UnaryControlSequence<Integer> CHA = new UnaryControlSequence<>(CSI + "%dG");
 
     /**
-     * Name: Cursor Position
-     * Short Name: CUP
-     * Code: <code>CSI <i>n</i>;<i>m</i> H</code>
-     * Description: Moves the cursor to row <i>n</i>, column <i>m</i>.
+     * <strong>Name:</strong> Cursor Position<br>
+     * <strong>Short Name:</strong> CUP<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i>;<i>m</i> H</code><br>
+     * <strong>Description:</strong> Moves the cursor to row <i>n</i>, column <i>m</i>.
      */
     public static final BinaryControlSequence<Integer, Integer> CUP = new BinaryControlSequence<>(CSI + "%d;%dH");
 
     /**
-     * Name: Select Graphic Rendition
-     * Short Name: SGR
-     * Code: <code>CSI <i>n</i> m</code>
-     * Description: Sets the appearance of the following characters.
+     * <strong>Name:</strong> Select Graphic Rendition<br>
+     * <strong>Short Name:</strong> SGR<br>
+     * <strong>Code:</strong> <code>CSI <i>n</i> m</code><br>
+     * <strong>Description:</strong> Sets the appearance of the following characters.
      */
     public static final UnaryControlSequence<String> SGR = new UnaryControlSequence<>(CSI + "%sm");
 
     /**
-     * Name: Show Cursor
-     * Short Name: SCU
-     * Code: <code>CSI ? 25 h</code>
-     * Description: Shows the cursor
+     * <strong>Name:</strong> Show Cursor<br>
+     * <strong>Short Name:</strong> SCU<br>
+     * <strong>Code:</strong> <code>CSI ? 25 h</code><br>
+     * <strong>Description:</strong> Shows the cursor
      */
     public static final NullaryControlSequence SCU = new NullaryControlSequence(CSI + "?25h");
 
     /**
-     * Name: Hide Cursor
-     * Short Name: HCU
-     * Code: <code>CSI ? 25 l</code>
-     * Description: Hides the cursor
+     * <strong>Name:</strong> Hide Cursor<br>
+     * <strong>Short Name:</strong> HCU<br>
+     * <strong>Code:</strong> <code>CSI ? 25 l</code><br>
+     * <strong>Description:</strong> Hides the cursor
      */
     public static final NullaryControlSequence HCU = new NullaryControlSequence(CSI + "?25l");
 }
