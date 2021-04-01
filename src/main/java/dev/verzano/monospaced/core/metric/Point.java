@@ -2,6 +2,7 @@ package dev.verzano.monospaced.core.metric;
 
 import java.util.Objects;
 
+// TODO might not make sense outside the GUI lib
 public class Point {
     private int x;
     private int y;

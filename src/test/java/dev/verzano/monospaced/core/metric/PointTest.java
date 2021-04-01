@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 class PointTest {
     @Test
     void twoArgConstructor() {
-        final int x = -1919191;
-        final int y = 1492;
+        final var x = -1919191;
+        final var y = 1492;
 
-        Point point = new Point(x, y);
+        var point = new Point(x, y);
 
         assertAll(
                 () -> assertEquals(x, point.getX(), "X coordinate is incorrect"),

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class SpacingTest {
     @Test
     void defaultConstructor() {
-        Spacing spacing = new Spacing();
+        var spacing = new Spacing();
 
         assertAll(
                 () -> assertEquals(0, spacing.getTop(), "Top spacing is incorrect"),
@@ -19,9 +19,9 @@ class SpacingTest {
 
     @Test
     void oneArgConstructor() {
-        final int trbl = 22;
+        final var trbl = 22;
 
-        Spacing spacing = new Spacing(trbl);
+        var spacing = new Spacing(trbl);
 
         assertAll(
                 () -> assertEquals(trbl, spacing.getTop(), "Top spacing is incorrect"),
@@ -32,10 +32,10 @@ class SpacingTest {
 
     @Test
     void twoArgConstructor() {
-        final int tb = 22;
-        final int rl = 11;
+        final var tb = 22;
+        final var rl = 11;
 
-        Spacing spacing = new Spacing(tb, rl);
+        var spacing = new Spacing(tb, rl);
 
         assertAll(
                 () -> assertEquals(tb, spacing.getTop(), "Top spacing is incorrect"),
@@ -46,11 +46,11 @@ class SpacingTest {
 
     @Test
     void threeArgConstructor() {
-        final int t = 22;
-        final int rl = 44;
-        final int b = 11;
+        final var t = 22;
+        final var rl = 44;
+        final var b = 11;
 
-        Spacing spacing = new Spacing(t, rl, b);
+        var spacing = new Spacing(t, rl, b);
 
         assertAll(
                 () -> assertEquals(t, spacing.getTop(), "Top spacing is incorrect"),
@@ -61,12 +61,12 @@ class SpacingTest {
 
     @Test
     void fourArgConstructor() {
-        final int t = 22;
-        final int r = 44;
-        final int b = 11;
-        final int l = 99;
+        final var t = 22;
+        final var r = 44;
+        final var b = 11;
+        final var l = 99;
 
-        Spacing spacing = new Spacing(t, r, b, l);
+        var spacing = new Spacing(t, r, b, l);
 
         assertAll(
                 () -> assertEquals(t, spacing.getTop(), "Top spacing is incorrect"),
