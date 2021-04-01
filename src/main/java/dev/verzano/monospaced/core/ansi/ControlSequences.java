@@ -42,8 +42,8 @@ public final class ControlSequences {
     public static final UnaryControlSequence<Integer> CUF = new UnaryControlSequence<>(CSI + "%dC");
 
     /**
-     * <strong>Name:</strong> Cursor Down<br>
-     * <strong>Short Name:</strong> CUD<br>
+     * <strong>Name:</strong> Cursor Back<br>
+     * <strong>Short Name:</strong> CUB<br>
      * <strong>Code:</strong> <code>CSI <i>n</i> D</code><br>
      * <strong>Description:</strong> Moves the cursor <i>n</i> (default 1) cells back (left).
      */
