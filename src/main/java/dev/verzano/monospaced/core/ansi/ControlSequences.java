@@ -19,7 +19,7 @@ public final class ControlSequences {
 
     /**
      * Name: Cursor Up
-     * Short Name: CUP
+     * Short Name: CUU
      * Code: <code>CSI <i>n</i> A</code>
      * Description: Moves the cursor <i>n</i> (default 1) cells up.
      */
