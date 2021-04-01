@@ -3,28 +3,48 @@ package dev.verzano.monospaced.core.metric;
 import java.util.Objects;
 
 public class Spacing {
-    private int left;
     private int top;
     private int right;
     private int bottom;
+    private int left;
 
     public Spacing() {
-        this(0);
+        this(0, 0, 0, 0);
     }
 
-    public Spacing(int leftRightTopBottom) {
-        this(leftRightTopBottom, leftRightTopBottom);
+    public Spacing(int rightLeftTopBottom) {
+        this(rightLeftTopBottom, rightLeftTopBottom, rightLeftTopBottom, rightLeftTopBottom);
     }
 
-    public Spacing(int leftRight, int topBottom) {
-        this(leftRight, topBottom, leftRight, topBottom);
+    public Spacing(int top, int rightLeft, int bottom) {
+        this(top, rightLeft, bottom, rightLeft);
     }
 
-    public Spacing(int left, int top, int right, int bottom) {
-        this.left = left;
+    public Spacing(int topBottom, int rightLeft) {
+        this(topBottom, rightLeft, topBottom, rightLeft);
+    }
+
+    public Spacing(int top, int right, int bottom, int left) {
         this.top = top;
         this.right = right;
         this.bottom = bottom;
+        this.left = left;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public void setTop(int top) {
+        this.top = top;
+    }
+
+    public int getRight() {
+        return right;
+    }
+
+    public void setRight(int right) {
+        this.right = right;
     }
 
     public int getBottom() {
@@ -43,42 +63,30 @@ public class Spacing {
         this.left = left;
     }
 
-    public int getRight() {
-        return right;
-    }
-
-    public void setRight(int right) {
-        this.right = right;
-    }
-
-    public int getTop() {
-        return top;
-    }
-
-    public void setTop(int top) {
-        this.top = top;
-    }
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        var spacing = (Spacing) o;
-        return left == spacing.left && top == spacing.top && right == spacing.right && bottom == spacing.bottom;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Spacing spacing = (Spacing) o;
+        return top == spacing.top && right == spacing.right && bottom == spacing.bottom && left == spacing.left;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(left, top, right, bottom);
+        return Objects.hash(top, right, bottom, left);
     }
 
     @Override
     public String toString() {
         return "Spacing{" +
-                "left=" + left +
-                ", top=" + top +
+                "top=" + top +
                 ", right=" + right +
                 ", bottom=" + bottom +
+                ", left=" + left +
                 '}';
     }
 }

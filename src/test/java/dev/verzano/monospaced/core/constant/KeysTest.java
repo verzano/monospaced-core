@@ -92,13 +92,13 @@ class KeysTest {
     @ParameterizedTest
     @MethodSource("charKeyValues")
     void charKeyValues(String keyName, char actual, char expected) {
-        assertEquals(expected, actual, "Key " + keyName + " has wrong value: " + actual);
+        assertEquals(expected, actual, "Key " + keyName + " has wrong value");
     }
 
     @ParameterizedTest
     @MethodSource("stringKeyValues")
     void stringKeyValues(String keyName, String actual, String expected) {
-        assertEquals(expected, actual, "Key " + keyName + " has wrong value: " + actual);
+        assertEquals(expected, actual, "Key " + keyName + " has wrong value");
     }
 
     @Test
