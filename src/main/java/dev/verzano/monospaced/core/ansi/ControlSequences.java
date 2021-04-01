@@ -5,6 +5,7 @@ import dev.verzano.monospaced.core.ansi.ControlSequence.NullaryControlSequence;
 import dev.verzano.monospaced.core.ansi.ControlSequence.UnaryControlSequence;
 import dev.verzano.monospaced.core.constant.Keys;
 
+// TODO implement defaults for these somehow...
 public final class ControlSequences {
     private ControlSequences() {
     }
@@ -69,7 +70,7 @@ public final class ControlSequences {
      * <strong>Name:</strong> Cursor Horizontal Absolute<br>
      * <strong>Short Name:</strong> CHA<br>
      * <strong>Code:</strong> <code>CSI <i>n</i> G</code><br>
-     * <strong>Description:</strong> Moves the cursor to column n (default 1).
+     * <strong>Description:</strong> Moves the cursor to column n (default 0).
      */
     public static final UnaryControlSequence<Integer> CHA = new UnaryControlSequence<>(CSI + "%dG");
 
@@ -77,7 +78,7 @@ public final class ControlSequences {
      * <strong>Name:</strong> Cursor Position<br>
      * <strong>Short Name:</strong> CUP<br>
      * <strong>Code:</strong> <code>CSI <i>n</i>;<i>m</i> H</code><br>
-     * <strong>Description:</strong> Moves the cursor to row <i>n</i>, column <i>m</i>.
+     * <strong>Description:</strong> Moves the cursor to row <i>n</i>, column <i>m</i> (default 0, 0).
      */
     public static final BinaryControlSequence<Integer, Integer> CUP = new BinaryControlSequence<>(CSI + "%d;%dH");
 
